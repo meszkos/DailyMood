@@ -19,6 +19,7 @@ struct MainTab: View {
                 }
                 .tabItem {
                     Image(systemName: "house")
+                        
                 }.tag(0)
             DaysView()
                 .onTapGesture {
@@ -26,8 +27,10 @@ struct MainTab: View {
                 }
                 .tabItem {
                     Image(systemName: "calendar")
+                        
                 }.tag(1)
         }
+        .accentColor(Color.moodBlue)
     }
 }
 

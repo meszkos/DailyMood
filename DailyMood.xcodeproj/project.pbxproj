@@ -15,6 +15,10 @@
 		2274778028585C1F00BBC998 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2274777F28585C1F00BBC998 /* HomeView.swift */; };
 		2274778228585C2700BBC998 /* DaysView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2274778128585C2700BBC998 /* DaysView.swift */; };
 		2274778428585D1100BBC998 /* Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2274778328585D1100BBC998 /* Extentions.swift */; };
+		2274778828585F9F00BBC998 /* DayRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2274778728585F9F00BBC998 /* DayRowView.swift */; };
+		2274778B2858610300BBC998 /* DayMood.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2274778A2858610300BBC998 /* DayMood.swift */; };
+		2274778E285865E200BBC998 /* AddDayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2274778D285865E200BBC998 /* AddDayView.swift */; };
+		22747791285867A800BBC998 /* DayDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22747790285867A800BBC998 /* DayDetailsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +31,10 @@
 		2274777F28585C1F00BBC998 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		2274778128585C2700BBC998 /* DaysView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaysView.swift; sourceTree = "<group>"; };
 		2274778328585D1100BBC998 /* Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extentions.swift; sourceTree = "<group>"; };
+		2274778728585F9F00BBC998 /* DayRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayRowView.swift; sourceTree = "<group>"; };
+		2274778A2858610300BBC998 /* DayMood.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayMood.swift; sourceTree = "<group>"; };
+		2274778D285865E200BBC998 /* AddDayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDayView.swift; sourceTree = "<group>"; };
+		22747790285867A800BBC998 /* DayDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayDetailsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +87,10 @@
 		2274777828585B7A00BBC998 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				2274778F2858679E00BBC998 /* DayDetails */,
+				2274778C285865CE00BBC998 /* AddDay */,
+				22747789285860EE00BBC998 /* Model */,
+				2274778528585F8100BBC998 /* Components */,
 				2274777D28585C0800BBC998 /* Days */,
 				2274777C28585C0100BBC998 /* Home */,
 				2274777928585B8000BBC998 /* MainTab */,
@@ -109,6 +121,46 @@
 				2274778128585C2700BBC998 /* DaysView.swift */,
 			);
 			path = Days;
+			sourceTree = "<group>";
+		};
+		2274778528585F8100BBC998 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				2274778628585F8A00BBC998 /* DayRow */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		2274778628585F8A00BBC998 /* DayRow */ = {
+			isa = PBXGroup;
+			children = (
+				2274778728585F9F00BBC998 /* DayRowView.swift */,
+			);
+			path = DayRow;
+			sourceTree = "<group>";
+		};
+		22747789285860EE00BBC998 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				2274778A2858610300BBC998 /* DayMood.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		2274778C285865CE00BBC998 /* AddDay */ = {
+			isa = PBXGroup;
+			children = (
+				2274778D285865E200BBC998 /* AddDayView.swift */,
+			);
+			path = AddDay;
+			sourceTree = "<group>";
+		};
+		2274778F2858679E00BBC998 /* DayDetails */ = {
+			isa = PBXGroup;
+			children = (
+				22747790285867A800BBC998 /* DayDetailsView.swift */,
+			);
+			path = DayDetails;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -183,10 +235,14 @@
 			files = (
 				2274778228585C2700BBC998 /* DaysView.swift in Sources */,
 				2274776D2857A0DB00BBC998 /* ContentView.swift in Sources */,
+				22747791285867A800BBC998 /* DayDetailsView.swift in Sources */,
 				2274778428585D1100BBC998 /* Extentions.swift in Sources */,
 				2274778028585C1F00BBC998 /* HomeView.swift in Sources */,
 				2274777B28585BAD00BBC998 /* MainTab.swift in Sources */,
+				2274778B2858610300BBC998 /* DayMood.swift in Sources */,
 				2274776B2857A0DB00BBC998 /* DailyMoodApp.swift in Sources */,
+				2274778E285865E200BBC998 /* AddDayView.swift in Sources */,
+				2274778828585F9F00BBC998 /* DayRowView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

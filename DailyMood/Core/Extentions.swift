@@ -8,6 +8,14 @@
 import Foundation
 import SwiftUI
 
+
+extension Color{
+    static let moodRed = Color("MoodRed")
+    static let moodBlue = Color("MoodBlue")
+    static let moodGreen = Color("MoodGreen")
+}
+
+
 extension View{
     func endTextEditing(){
         UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
