@@ -19,6 +19,9 @@
 		2274778B2858610300BBC998 /* DayMood.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2274778A2858610300BBC998 /* DayMood.swift */; };
 		2274778E285865E200BBC998 /* AddDayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2274778D285865E200BBC998 /* AddDayView.swift */; };
 		22747791285867A800BBC998 /* DayDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22747790285867A800BBC998 /* DayDetailsView.swift */; };
+		22747794285A2A4700BBC998 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 22747793285A2A4700BBC998 /* Realm */; };
+		22747796285A2A4700BBC998 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 22747795285A2A4700BBC998 /* RealmSwift */; };
+		22747799285A2A6800BBC998 /* RealmService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22747798285A2A6800BBC998 /* RealmService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +38,7 @@
 		2274778A2858610300BBC998 /* DayMood.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayMood.swift; sourceTree = "<group>"; };
 		2274778D285865E200BBC998 /* AddDayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDayView.swift; sourceTree = "<group>"; };
 		22747790285867A800BBC998 /* DayDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayDetailsView.swift; sourceTree = "<group>"; };
+		22747798285A2A6800BBC998 /* RealmService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,6 +46,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				22747796285A2A4700BBC998 /* RealmSwift in Frameworks */,
+				22747794285A2A4700BBC998 /* Realm in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -87,6 +93,7 @@
 		2274777828585B7A00BBC998 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				22747797285A2A5A00BBC998 /* Service */,
 				2274778F2858679E00BBC998 /* DayDetails */,
 				2274778C285865CE00BBC998 /* AddDay */,
 				22747789285860EE00BBC998 /* Model */,
@@ -163,6 +170,14 @@
 			path = DayDetails;
 			sourceTree = "<group>";
 		};
+		22747797285A2A5A00BBC998 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				22747798285A2A6800BBC998 /* RealmService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -179,6 +194,10 @@
 			dependencies = (
 			);
 			name = DailyMood;
+			packageProductDependencies = (
+				22747793285A2A4700BBC998 /* Realm */,
+				22747795285A2A4700BBC998 /* RealmSwift */,
+			);
 			productName = DailyMood;
 			productReference = 227477672857A0DB00BBC998 /* DailyMood.app */;
 			productType = "com.apple.product-type.application";
@@ -207,6 +226,9 @@
 				Base,
 			);
 			mainGroup = 2274775E2857A0DB00BBC998;
+			packageReferences = (
+				22747792285A2A4600BBC998 /* XCRemoteSwiftPackageReference "realm-swift" */,
+			);
 			productRefGroup = 227477682857A0DB00BBC998 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -234,6 +256,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2274778228585C2700BBC998 /* DaysView.swift in Sources */,
+				22747799285A2A6800BBC998 /* RealmService.swift in Sources */,
 				2274776D2857A0DB00BBC998 /* ContentView.swift in Sources */,
 				22747791285867A800BBC998 /* DayDetailsView.swift in Sources */,
 				2274778428585D1100BBC998 /* Extentions.swift in Sources */,
@@ -447,6 +470,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		22747792285A2A4600BBC998 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-swift.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		22747793285A2A4700BBC998 /* Realm */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 22747792285A2A4600BBC998 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = Realm;
+		};
+		22747795285A2A4700BBC998 /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 22747792285A2A4600BBC998 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = RealmSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 2274775F2857A0DB00BBC998 /* Project object */;
 }
