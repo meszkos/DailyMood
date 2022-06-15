@@ -25,7 +25,7 @@ struct DaysView: View {
             HStack{
                 Text("Daily Mood")
                     .font(.largeTitle).bold()
-                    .foregroundColor(.moodBlue)
+                    .foregroundColor(.black)
                 Spacer()
             }
             ScrollView{
@@ -37,10 +37,12 @@ struct DaysView: View {
                     DayRowView(dayMood: DayMood(date: "07/10/20", positive: "si", challange: "no", moodScore: 53))
                 }
             }
-            .cornerRadius(12)
+            .clipShape(RoundedRectangle(cornerRadius: 20, style: .continuous))
+            .shadow(color: Color.primary.opacity(0.1), radius: 10, x: 0, y: 5)
             Spacer()
         }
         .padding()
+        
         .navigationTitle("")
         .navigationBarHidden(true)
     }

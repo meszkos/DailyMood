@@ -13,6 +13,7 @@ extension Color{
     static let moodRed = Color("MoodRed")
     static let moodBlue = Color("MoodBlue")
     static let moodGreen = Color("MoodGreen")
+    static let lightGray = Color(UIColor.systemGray6)
 }
 
 
