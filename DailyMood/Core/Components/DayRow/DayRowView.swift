@@ -10,11 +10,12 @@ import SwiftUI
 struct DayRowView: View {
     
     var dayMood: DayMood
+    @EnvironmentObject var realmService: RealmService
     
     var body: some View {
         VStack {
             NavigationLink {
-                DayDetailsView()
+                DayDetailsView(dayMood: dayMood).environmentObject(realmService)
             } label: {
                 HStack{
                     Text(dayMood.date)

@@ -36,7 +36,9 @@ struct DaysView: View {
                 VStack(spacing: 0){
                     ForEach(realmService.dailyMoods, id: \.id){
                         day in
-                        DayRowView(dayMood: day)
+                        if !day.isInvalidated{
+                            DayRowView(dayMood: day)
+                        }
                     }
                 }
             }
