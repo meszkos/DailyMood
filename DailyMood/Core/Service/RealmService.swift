@@ -11,7 +11,7 @@ import RealmSwift
 class RealmService: ObservableObject{
     private(set) var localRealm: Realm?
     
-    @Published private(set) var dailyMoods: [DayMoodData] = []
+    @Published private(set) var dailyMoods: [DayMood] = []
     
     init(){
         openRealm()
@@ -34,7 +34,7 @@ class RealmService: ObservableObject{
         if let localRealm = localRealm{
             do{
                 try localRealm.write{
-                    let newMood = DayMoodData(value: ["date": date,
+                    let newMood = DayMood(value: ["date": date,
                                                       "moodScore": moodScore,
                                                       "positive": positive,
                                                       "challange": challange])
@@ -48,7 +48,7 @@ class RealmService: ObservableObject{
     }
     func getDays(){
         if let localRealm = localRealm {
-            let allDays = localRealm.objects(DayMoodData.self).sorted(byKeyPath: "date")
+            let allDays = localRealm.objects(DayMood.self).sorted(byKeyPath: "date")
             dailyMoods = []
             allDays.forEach{day in
                 dailyMoods.append(day)
@@ -58,7 +58,7 @@ class RealmService: ObservableObject{
     func deleteDay(id: ObjectId){
         if let localRealm = localRealm {
             do{
-                let dayToDelete = localRealm.objects(DayMoodData.self).filter(NSPredicate(format: "id == %@", id))
+                let dayToDelete = localRealm.objects(DayMood.self).filter(NSPredicate(format: "id == %@", id))
                 guard !dayToDelete.isEmpty else {return}
                 
                 try localRealm.write{

@@ -78,7 +78,10 @@ extension AddDayView{
             }
             Spacer()
             Button {
-                realmService.addMood(date: "123", moodScore: moodScore, positive: positive, challange: challange)
+                realmService.addMood(date: getDate(),
+                                     moodScore: moodScore,
+                                     positive: positive,
+                                     challange: challange)
                 presentationMode.wrappedValue.dismiss()
             } label: {
                 Text("ADD")
@@ -89,6 +92,12 @@ extension AddDayView{
             
         }
         .padding(.bottom, 20)
+    }
+    func getDate() -> String{
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd/MM/yy"
+        let stringDate = dateFormatter.string(from: Date.now)
+        return stringDate
     }
     
 }
