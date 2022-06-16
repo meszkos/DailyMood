@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @StateObject var realmService = RealmService()
+    
     var body: some View {
         MainTab()
     }

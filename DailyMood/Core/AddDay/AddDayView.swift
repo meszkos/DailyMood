@@ -10,6 +10,7 @@ import SwiftUI
 
 struct AddDayView: View {
     
+    @EnvironmentObject var realmService: RealmService
     @Environment(\.presentationMode) var presentationMode
     @State var positive: String = ""
     @State var challange: String = ""
@@ -45,6 +46,7 @@ struct AddDayView: View {
 struct AddDayView_Previews: PreviewProvider {
     static var previews: some View {
         AddDayView()
+            .environmentObject(RealmService())
     }
 }
 
@@ -76,7 +78,8 @@ extension AddDayView{
             }
             Spacer()
             Button {
-                //Add Mood and dismiss
+                realmService.addMood(date: "123", moodScore: moodScore, positive: positive, challange: challange)
+                presentationMode.wrappedValue.dismiss()
             } label: {
                 Text("ADD")
                     .font(.system(size: 25))

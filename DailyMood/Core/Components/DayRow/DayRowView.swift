@@ -9,7 +9,7 @@ import SwiftUI
 
 struct DayRowView: View {
     
-    var dayMood: DayMood
+    var dayMood: DayMoodData
     
     var body: some View {
         VStack {
@@ -34,7 +34,7 @@ struct DayRowView: View {
 
 struct DayRowView_Previews: PreviewProvider {
     static var previews: some View {
-        DayRowView(dayMood: DayMood(date: "11/01/22", positive: "rower", challange: "work", moodScore: 63.5))
+        DayRowView(dayMood: DayMoodData())
     }
 }
 

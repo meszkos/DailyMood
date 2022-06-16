@@ -11,7 +11,7 @@ import RealmSwift
 class RealmService: ObservableObject{
     private(set) var localRealm: Realm?
     
-    @Published private var dailyMoods: [DayMoodData] = []
+    @Published private(set) var dailyMoods: [DayMoodData] = []
     
     init(){
         openRealm()
@@ -39,7 +39,7 @@ class RealmService: ObservableObject{
                                                       "positive": positive,
                                                       "challange": challange])
                     localRealm.add(newMood)
-                    getDays()
+                                        getDays()
                 }
             }catch{
                 print("error adding to realm")

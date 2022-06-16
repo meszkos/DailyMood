@@ -10,6 +10,8 @@ import SwiftUI
 struct MainTab: View {
     
     @State private var selectedIndex = 0
+    @StateObject var realmService = RealmService()
+    
     
     var body: some View {
         TabView(selection: $selectedIndex) {
@@ -25,6 +27,7 @@ struct MainTab: View {
                 .onTapGesture {
                     self.selectedIndex = 1
                 }
+                .environmentObject(realmService)
                 .tabItem {
                     Image(systemName: "calendar")
                         
