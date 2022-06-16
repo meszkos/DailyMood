@@ -11,10 +11,11 @@ import RealmSwift
 class RealmService: ObservableObject{
     private(set) var localRealm: Realm?
     
-    @Published private var dailyMoods: [DayMood] = []
+    @Published private var dailyMoods: [DayMoodData] = []
     
     init(){
         openRealm()
+        getDays()
     }
     
     func openRealm(){
@@ -38,10 +39,34 @@ class RealmService: ObservableObject{
                                                       "positive": positive,
                                                       "challange": challange])
                     localRealm.add(newMood)
-                    print("Added new Mood")
+                    getDays()
                 }
             }catch{
                 print("error adding to realm")
+            }
+        }
+    }
+    func getDays(){
+        if let localRealm = localRealm {
+            let allDays = localRealm.objects(DayMoodData.self).sorted(byKeyPath: "date")
+            dailyMoods = []
+            allDays.forEach{day in
+                dailyMoods.append(day)
+            }
+        }
+    }
+    func deleteDay(id: ObjectId){
+        if let localRealm = localRealm {
+            do{
+                let dayToDelete = localRealm.objects(DayMoodData.self).filter(NSPredicate(format: "id == %@", id))
+                guard !dayToDelete.isEmpty else {return}
+                
+                try localRealm.write{
+                    localRealm.delete(dayToDelete)
+                    getDays()
+                }
+            }catch{
+                print("error deleting task")
             }
         }
     }
