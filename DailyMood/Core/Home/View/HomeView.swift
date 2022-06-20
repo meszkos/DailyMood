@@ -6,10 +6,18 @@
 //
 
 import SwiftUI
+import SafariServices
 
 struct HomeView: View {
     
     let text = "this is a quote that is pretty long and makes good oro lets go go sir."
+
+    @State private var showSafari = false
+    @ObservedObject var viewModel: HomeViewModel
+    
+    init(){
+        self.viewModel = HomeViewModel()
+    }
     
     var body: some View {
         VStack{
@@ -36,7 +44,7 @@ struct HomeView: View {
                 }
                 .padding()
                 Button {
-                    //Get Song
+                    showSafari.toggle()
                 } label: {
                     Text("Get Song")
                         .frame(width: 200, height: 50)
@@ -46,9 +54,12 @@ struct HomeView: View {
                         .foregroundColor(.moodGreen)
                         
                 }
+                .sheet(isPresented: $showSafari, content: {
+                    SafariView(url: viewModel.getSong())
+                })
                 .padding()
                 Button {
-                    //Get Song
+                    //Get quote
                 } label: {
                     Text("Get Quote")
                         .frame(width: 200, height: 50)

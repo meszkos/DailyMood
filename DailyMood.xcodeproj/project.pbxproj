@@ -22,6 +22,9 @@
 		22747794285A2A4700BBC998 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 22747793285A2A4700BBC998 /* Realm */; };
 		22747796285A2A4700BBC998 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 22747795285A2A4700BBC998 /* RealmSwift */; };
 		22747799285A2A6800BBC998 /* RealmService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22747798285A2A6800BBC998 /* RealmService.swift */; };
+		227477A02860AACF00BBC998 /* SafariView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2274779F2860AACF00BBC998 /* SafariView.swift */; };
+		227477A22860AD3500BBC998 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 227477A12860AD3500BBC998 /* Constants.swift */; };
+		227477A72860ADAC00BBC998 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 227477A62860ADAC00BBC998 /* HomeViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +42,9 @@
 		2274778D285865E200BBC998 /* AddDayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDayView.swift; sourceTree = "<group>"; };
 		22747790285867A800BBC998 /* DayDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayDetailsView.swift; sourceTree = "<group>"; };
 		22747798285A2A6800BBC998 /* RealmService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmService.swift; sourceTree = "<group>"; };
+		2274779F2860AACF00BBC998 /* SafariView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariView.swift; sourceTree = "<group>"; };
+		227477A12860AD3500BBC998 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		227477A62860ADAC00BBC998 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +108,7 @@
 				2274778F2858679E00BBC998 /* DayDetails */,
 				2274777928585B8000BBC998 /* MainTab */,
 				2274778328585D1100BBC998 /* Extentions.swift */,
+				227477A12860AD3500BBC998 /* Constants.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -117,7 +124,8 @@
 		2274777C28585C0100BBC998 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				2274777F28585C1F00BBC998 /* HomeView.swift */,
+				227477A32860AD8B00BBC998 /* ViewModel */,
+				227477A42860AD9200BBC998 /* View */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -133,6 +141,7 @@
 		2274778528585F8100BBC998 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				2274779E2860AABB00BBC998 /* SafariView */,
 				2274778628585F8A00BBC998 /* DayRow */,
 			);
 			path = Components;
@@ -176,6 +185,30 @@
 				22747798285A2A6800BBC998 /* RealmService.swift */,
 			);
 			path = Service;
+			sourceTree = "<group>";
+		};
+		2274779E2860AABB00BBC998 /* SafariView */ = {
+			isa = PBXGroup;
+			children = (
+				2274779F2860AACF00BBC998 /* SafariView.swift */,
+			);
+			path = SafariView;
+			sourceTree = "<group>";
+		};
+		227477A32860AD8B00BBC998 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				227477A62860ADAC00BBC998 /* HomeViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		227477A42860AD9200BBC998 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				2274777F28585C1F00BBC998 /* HomeView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -255,13 +288,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				227477A22860AD3500BBC998 /* Constants.swift in Sources */,
 				2274778228585C2700BBC998 /* DaysView.swift in Sources */,
 				22747799285A2A6800BBC998 /* RealmService.swift in Sources */,
 				2274776D2857A0DB00BBC998 /* ContentView.swift in Sources */,
 				22747791285867A800BBC998 /* DayDetailsView.swift in Sources */,
+				227477A02860AACF00BBC998 /* SafariView.swift in Sources */,
 				2274778428585D1100BBC998 /* Extentions.swift in Sources */,
 				2274778028585C1F00BBC998 /* HomeView.swift in Sources */,
 				2274777B28585BAD00BBC998 /* MainTab.swift in Sources */,
+				227477A72860ADAC00BBC998 /* HomeViewModel.swift in Sources */,
 				2274778B2858610300BBC998 /* DayMood.swift in Sources */,
 				2274776B2857A0DB00BBC998 /* DailyMoodApp.swift in Sources */,
 				2274778E285865E200BBC998 /* AddDayView.swift in Sources */,
