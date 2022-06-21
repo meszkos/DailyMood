@@ -18,6 +18,28 @@ struct DayDetailsView: View {
     var body: some View {
         VStack(alignment: .leading){
             buttonStack
+            moodScoreLabel
+            
+            
+            Text("Positive things:")
+                .font(.largeTitle).bold()
+            Text("\(dayMood.positive)")
+                .padding()
+                .font(.system(size: 20))
+                .multilineTextAlignment(.center)
+                .background(Color.lightGray)
+                .clipShape(RoundedRectangle(cornerRadius: 20, style: .continuous))
+                .shadow(color: Color.primary.opacity(0.1), radius: 10, x: 0, y: 5)
+            Text("Challanges:")
+                .font(.largeTitle).bold()
+            Text("\(dayMood.challange)")
+                .padding()
+                .font(.system(size: 20))
+                .multilineTextAlignment(.center)
+                .background(Color.lightGray)
+                .clipShape(RoundedRectangle(cornerRadius: 20, style: .continuous))
+                .shadow(color: Color.primary.opacity(0.1), radius: 10, x: 0, y: 5)
+            
             Spacer()
         }
         .navigationTitle("")
@@ -57,4 +79,31 @@ extension DayDetailsView{
         }
         .padding(.bottom, 20)
     }
+    var moodScoreLabel: some View{
+        HStack{
+            Spacer()
+            Text(String(format: "%.1f", dayMood.moodScore))
+                .font(.system(size: 50)).bold()
+                .foregroundColor(getColor(dayMood.moodScore))
+                .padding(.bottom, 30)
+            Spacer()
+        }
+    }
+    
+
+    
+    func getColor(_ moodScore: Double) -> Color{
+        var color = Color.moodGreen
+        
+        if moodScore < 25.0{
+            color = Color.moodRed
+        }else if moodScore < 75.0{
+            color = Color.moodBlue
+        }else{
+            color = Color.moodGreen
+        }
+        return color
+    }
+
 }
+

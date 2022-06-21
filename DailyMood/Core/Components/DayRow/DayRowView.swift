@@ -39,7 +39,8 @@ struct DayRowView_Previews: PreviewProvider {
     }
 }
 
-func getColor(_ moodScore: Double) -> Color{
+
+public func getColor(_ moodScore: Double) -> Color{
     var color = Color.moodGreen
     
     if moodScore < 25.0{
@@ -51,3 +52,5 @@ func getColor(_ moodScore: Double) -> Color{
     }
     return color
 }
+
+
