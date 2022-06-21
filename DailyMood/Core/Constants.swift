@@ -22,4 +22,29 @@ struct K{
         "https://www.youtube.com/watch?v=8zdg-pDF10g"
     ]
     
+    static let quotes = [
+        "WAGMI",
+        "You are beautifull!",
+        "You are important!",
+        "You are loved!",
+        "You are smart!",
+        "You are talented!",
+        "You can do it!",
+        "Day by day, it will get better.",
+        "Some day you will go to Japan.",
+        "You are enough.",
+        "You're doing great! Keep going.",
+        "Im proud of you",
+        "You are wanted",
+        "Im proud of you.",
+        "You will have enough money to do anything you want.",
+        "You will be healthy",
+        "Healing Takes Time",
+        "I found that with depression, one of the most important things you could realize is that you’re not alone.",
+        "I have depression. But I prefer to say, ‘I battle’ depression instead of ‘I suffer’ with it. Because depression hits, but I hit back. Battle on.",
+        "Depression doesn't take away your talents—it just makes them harder to find.",
+        "There is hope, even when your brain tells you there isn't.",
+        
+    ]
+    
 }
