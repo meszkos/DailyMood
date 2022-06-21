@@ -10,10 +10,13 @@ import SafariServices
 
 struct HomeView: View {
     
-    let text = "this is a quote that is pretty long and makes good oro lets go go sir."
-
-    @State private var showSafari = false
     @ObservedObject var viewModel: HomeViewModel
+
+    @State var quote = ""
+    @State private var showSafari = false
+    
+    let timer = Timer.publish(every: 14400, on: .main, in: .common).autoconnect()
+    
     
     init(){
         self.viewModel = HomeViewModel()
@@ -22,63 +25,9 @@ struct HomeView: View {
     var body: some View {
         VStack{
             Spacer()
-            Text(text)
-                .padding()
-                .font(.system(size: 40))
-                .multilineTextAlignment(.center)
-                .background(Color.lightGray)
-                .clipShape(RoundedRectangle(cornerRadius: 20, style: .continuous))
-                .shadow(color: Color.primary.opacity(0.1), radius: 10, x: 0, y: 5)
+            quoteLabel
             Spacer()
-            VStack{
-                Button {
-                    //Image
-                } label: {
-                    Text("Get Image")
-                        .frame(width: 200, height: 50)
-                        .font(.system(size: 30))
-                        .background(Color.white)
-                        .cornerRadius(12)
-                        .foregroundColor(.moodBlue)
-                        
-                }
-                .padding()
-                Button {
-                    showSafari.toggle()
-                } label: {
-                    Text("Get Song")
-                        .frame(width: 200, height: 50)
-                        .font(.system(size: 30))
-                        .background(Color.white)
-                        .cornerRadius(12)
-                        .foregroundColor(.moodGreen)
-                        
-                }
-                .sheet(isPresented: $showSafari, content: {
-                    SafariView(url: viewModel.getSong())
-                })
-                .padding()
-                Button {
-                    //Get quote
-                } label: {
-                    Text("Get Quote")
-                        .frame(width: 200, height: 50)
-                        .font(.system(size: 30))
-                        .background(Color.white)
-                        .cornerRadius(12)
-                        .foregroundColor(.moodRed)
-                        
-                }
-                .padding()
-                
-                
-
-            }
-            .frame(maxWidth: .infinity)
-            .background(Color.lightGray)
-            .foregroundColor(.moodBlue)
-            .clipShape(RoundedRectangle(cornerRadius: 20, style: .continuous))
-            .shadow(color: Color.primary.opacity(0.1), radius: 10, x: 0, y: 5)
+            actionButtons
             
         }
         .padding()
@@ -92,4 +41,70 @@ struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
         HomeView()
     }
+}
+
+extension HomeView{
+    
+    var quoteLabel: some View{
+        Text(quote)
+            .onReceive(timer, perform: { _ in
+                quote = viewModel.updateQuote()
+            })
+            .padding()
+            .font(.system(size: 40))
+            .multilineTextAlignment(.center)
+            .background(Color.lightGray)
+            .clipShape(RoundedRectangle(cornerRadius: 20, style: .continuous))
+            .shadow(color: Color.primary.opacity(0.1), radius: 10, x: 0, y: 5)
+    }
+    
+    var actionButtons: some View{
+        VStack{
+            Button {
+                //Image
+            } label: {
+                Text("Get Image")
+                    .frame(width: 200, height: 50)
+                    .font(.system(size: 30))
+                    .background(Color.white)
+                    .cornerRadius(12)
+                    .foregroundColor(.moodBlue)
+                    
+            }
+            .padding()
+            Button {
+                showSafari.toggle()
+            } label: {
+                Text("Get Song")
+                    .frame(width: 200, height: 50)
+                    .font(.system(size: 30))
+                    .background(Color.white)
+                    .cornerRadius(12)
+                    .foregroundColor(.moodGreen)
+                    
+            }
+            .sheet(isPresented: $showSafari, content: {
+                SafariView(url: viewModel.getSong())
+            })
+            .padding()
+            Button {
+                quote = viewModel.updateQuote()
+            } label: {
+                Text("Get Quote")
+                    .frame(width: 200, height: 50)
+                    .font(.system(size: 30))
+                    .background(Color.white)
+                    .cornerRadius(12)
+                    .foregroundColor(.moodRed)
+                    
+            }
+            .padding()
+        }
+        .frame(maxWidth: .infinity)
+        .background(Color.lightGray)
+        .foregroundColor(.moodBlue)
+        .clipShape(RoundedRectangle(cornerRadius: 20, style: .continuous))
+        .shadow(color: Color.primary.opacity(0.1), radius: 10, x: 0, y: 5)
+    }
+    
 }

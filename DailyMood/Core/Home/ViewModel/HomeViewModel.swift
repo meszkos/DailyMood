@@ -15,9 +15,14 @@ class HomeViewModel: ObservableObject{
         let len = K.songs.count
         
         let index = Int.random(in: 0...len - 1)
-        let song = K.songs[index]
         
-        return URL(string: song)!
         
+        return URL(string: K.songs[index])!
+    }
+    func updateQuote() -> String{
+        let len = K.quotes.count
+        let index = Int.random(in: 0...len - 1)
+        
+        return K.quotes[index]
     }
 }
