@@ -25,7 +25,36 @@
 		227477A02860AACF00BBC998 /* SafariView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2274779F2860AACF00BBC998 /* SafariView.swift */; };
 		227477A22860AD3500BBC998 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 227477A12860AD3500BBC998 /* Constants.swift */; };
 		227477A72860ADAC00BBC998 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 227477A62860ADAC00BBC998 /* HomeViewModel.swift */; };
+		227477AF28636ACA00BBC998 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 227477AE28636AC900BBC998 /* WidgetKit.framework */; };
+		227477B128636ACA00BBC998 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 227477B028636ACA00BBC998 /* SwiftUI.framework */; };
+		227477B428636ACA00BBC998 /* DailyMoodWidgets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 227477B328636ACA00BBC998 /* DailyMoodWidgets.swift */; };
+		227477B628636AD500BBC998 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 227477B528636AD500BBC998 /* Assets.xcassets */; };
+		227477BA28636AD500BBC998 /* DailyMoodWidgetsExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 227477AC28636AC800BBC998 /* DailyMoodWidgetsExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		227477B828636AD500BBC998 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2274775F2857A0DB00BBC998 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 227477AB28636AC800BBC998;
+			remoteInfo = DailyMoodWidgetsExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		227477BE28636AD500BBC998 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				227477BA28636AD500BBC998 /* DailyMoodWidgetsExtension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		227477672857A0DB00BBC998 /* DailyMood.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DailyMood.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -45,6 +74,12 @@
 		2274779F2860AACF00BBC998 /* SafariView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariView.swift; sourceTree = "<group>"; };
 		227477A12860AD3500BBC998 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		227477A62860ADAC00BBC998 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		227477AC28636AC800BBC998 /* DailyMoodWidgetsExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = DailyMoodWidgetsExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		227477AE28636AC900BBC998 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		227477B028636ACA00BBC998 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		227477B328636ACA00BBC998 /* DailyMoodWidgets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyMoodWidgets.swift; sourceTree = "<group>"; };
+		227477B528636AD500BBC998 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		227477B728636AD500BBC998 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +92,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		227477A928636AC800BBC998 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				227477B128636ACA00BBC998 /* SwiftUI.framework in Frameworks */,
+				227477AF28636ACA00BBC998 /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -64,6 +108,8 @@
 			isa = PBXGroup;
 			children = (
 				227477692857A0DB00BBC998 /* DailyMood */,
+				227477B228636ACA00BBC998 /* DailyMoodWidgets */,
+				227477AD28636AC900BBC998 /* Frameworks */,
 				227477682857A0DB00BBC998 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -72,6 +118,7 @@
 			isa = PBXGroup;
 			children = (
 				227477672857A0DB00BBC998 /* DailyMood.app */,
+				227477AC28636AC800BBC998 /* DailyMoodWidgetsExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -211,6 +258,25 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		227477AD28636AC900BBC998 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				227477AE28636AC900BBC998 /* WidgetKit.framework */,
+				227477B028636ACA00BBC998 /* SwiftUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		227477B228636ACA00BBC998 /* DailyMoodWidgets */ = {
+			isa = PBXGroup;
+			children = (
+				227477B328636ACA00BBC998 /* DailyMoodWidgets.swift */,
+				227477B528636AD500BBC998 /* Assets.xcassets */,
+				227477B728636AD500BBC998 /* Info.plist */,
+			);
+			path = DailyMoodWidgets;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -221,10 +287,12 @@
 				227477632857A0DB00BBC998 /* Sources */,
 				227477642857A0DB00BBC998 /* Frameworks */,
 				227477652857A0DB00BBC998 /* Resources */,
+				227477BE28636AD500BBC998 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				227477B928636AD500BBC998 /* PBXTargetDependency */,
 			);
 			name = DailyMood;
 			packageProductDependencies = (
@@ -234,6 +302,23 @@
 			productName = DailyMood;
 			productReference = 227477672857A0DB00BBC998 /* DailyMood.app */;
 			productType = "com.apple.product-type.application";
+		};
+		227477AB28636AC800BBC998 /* DailyMoodWidgetsExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 227477BB28636AD500BBC998 /* Build configuration list for PBXNativeTarget "DailyMoodWidgetsExtension" */;
+			buildPhases = (
+				227477A828636AC800BBC998 /* Sources */,
+				227477A928636AC800BBC998 /* Frameworks */,
+				227477AA28636AC800BBC998 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DailyMoodWidgetsExtension;
+			productName = DailyMoodWidgetsExtension;
+			productReference = 227477AC28636AC800BBC998 /* DailyMoodWidgetsExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -246,6 +331,9 @@
 				LastUpgradeCheck = 1340;
 				TargetAttributes = {
 					227477662857A0DB00BBC998 = {
+						CreatedOnToolsVersion = 13.4;
+					};
+					227477AB28636AC800BBC998 = {
 						CreatedOnToolsVersion = 13.4;
 					};
 				};
@@ -267,6 +355,7 @@
 			projectRoot = "";
 			targets = (
 				227477662857A0DB00BBC998 /* DailyMood */,
+				227477AB28636AC800BBC998 /* DailyMoodWidgetsExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -278,6 +367,14 @@
 			files = (
 				227477722857A0E600BBC998 /* Preview Assets.xcassets in Resources */,
 				2274776F2857A0E600BBC998 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		227477AA28636AC800BBC998 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				227477B628636AD500BBC998 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -305,7 +402,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		227477A828636AC800BBC998 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				227477B428636ACA00BBC998 /* DailyMoodWidgets.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		227477B928636AD500BBC998 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 227477AB28636AC800BBC998 /* DailyMoodWidgetsExtension */;
+			targetProxy = 227477B828636AD500BBC998 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		227477732857A0E600BBC998 /* Debug */ = {
@@ -425,6 +538,7 @@
 		227477762857A0E600BBC998 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -456,6 +570,7 @@
 		227477772857A0E600BBC998 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -484,6 +599,60 @@
 			};
 			name = Release;
 		};
+		227477BC28636AD500BBC998 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3P5872A6DS;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = DailyMoodWidgets/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = DailyMoodWidgets;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.michal-michalik.DailyMood.DailyMoodWidgets";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		227477BD28636AD500BBC998 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3P5872A6DS;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = DailyMoodWidgets/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = DailyMoodWidgets;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.michal-michalik.DailyMood.DailyMoodWidgets";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -501,6 +670,15 @@
 			buildConfigurations = (
 				227477762857A0E600BBC998 /* Debug */,
 				227477772857A0E600BBC998 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		227477BB28636AD500BBC998 /* Build configuration list for PBXNativeTarget "DailyMoodWidgetsExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				227477BC28636AD500BBC998 /* Debug */,
+				227477BD28636AD500BBC998 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
