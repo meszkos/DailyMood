@@ -7,6 +7,7 @@
 
 import SwiftUI
 import SafariServices
+import UserNotifications
 
 struct HomeView: View {
     
@@ -15,11 +16,19 @@ struct HomeView: View {
     @State var quote = ""
     @State private var showSafari = false
     
-    let timer = Timer.publish(every: 14400, on: .main, in: .common).autoconnect()
+    let timer = Timer.publish(every: 14400 ,on: .main, in: .common).autoconnect()
     
     
     init(){
         self.viewModel = HomeViewModel()
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { succes, error in
+            if succes{
+                print("")
+            }else if let error = error{
+                print(error)
+            }
+        }
+        
     }
     
     var body: some View {
@@ -34,6 +43,9 @@ struct HomeView: View {
         .padding(.bottom, 50)
         .navigationTitle("")
         .navigationBarHidden(true)
+        .onChange(of: quote) { newValue in
+                viewModel.configureNotification(quote: quote)
+            }
     }
 }
 
@@ -49,6 +61,7 @@ extension HomeView{
         Text(quote)
             .onReceive(timer, perform: { _ in
                 quote = viewModel.updateQuote()
+                
             })
             .padding()
             .font(.system(size: 40))

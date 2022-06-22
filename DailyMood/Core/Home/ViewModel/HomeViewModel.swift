@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UserNotifications
 
 
 class HomeViewModel: ObservableObject{
@@ -24,5 +25,19 @@ class HomeViewModel: ObservableObject{
         let index = Int.random(in: 0...len - 1)
         
         return K.quotes[index]
+    }
+    
+    func configureNotification(quote: String){
+        UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
+        let content = UNMutableNotificationContent()
+        content.title = "Hi there!"
+        content.subtitle = "\(quote)"
+        content.sound = UNNotificationSound.default
+        
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 7200, repeats: false)
+        
+        let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
+        
+        UNUserNotificationCenter.current().add(request)
     }
 }
