@@ -17,10 +17,10 @@ struct DayDetailsView: View {
     
     var body: some View {
         VStack(alignment: .leading){
+            
             buttonStack
             moodScoreLabel
-            
-            
+
             Text("Positive things:")
                 .font(.largeTitle).bold()
             Text("\(dayMood.positive)")
@@ -82,10 +82,18 @@ extension DayDetailsView{
     var moodScoreLabel: some View{
         HStack{
             Spacer()
-            Text(String(format: "%.1f", dayMood.moodScore))
-                .font(.system(size: 50)).bold()
-                .foregroundColor(getColor(dayMood.moodScore))
-                .padding(.bottom, 30)
+            Circle()
+                .strokeBorder(
+                    AngularGradient(gradient: Gradient(colors: [.moodRed,.moodBlue,.moodBlue, .moodGreen,.moodGreen,.moodRed]),
+                                    center: .center, startAngle: .zero, endAngle: .degrees(360)),
+                                    lineWidth: 17
+                    )
+                .frame(width: 200, height: 200)
+                .overlay {
+                    Text(String(format: "%.1f", dayMood.moodScore))
+                        .font(.system(size: 50)).bold()
+                        .foregroundColor(getColor(dayMood.moodScore))
+                }
             Spacer()
         }
     }
