@@ -30,6 +30,7 @@
 		227477B428636ACA00BBC998 /* DailyMoodWidgets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 227477B328636ACA00BBC998 /* DailyMoodWidgets.swift */; };
 		227477B628636AD500BBC998 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 227477B528636AD500BBC998 /* Assets.xcassets */; };
 		227477BA28636AD500BBC998 /* DailyMoodWidgetsExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 227477AC28636AC800BBC998 /* DailyMoodWidgetsExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		227477C22864778100BBC998 /* RandomImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 227477C12864778000BBC998 /* RandomImageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +81,7 @@
 		227477B328636ACA00BBC998 /* DailyMoodWidgets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyMoodWidgets.swift; sourceTree = "<group>"; };
 		227477B528636AD500BBC998 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		227477B728636AD500BBC998 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		227477C12864778000BBC998 /* RandomImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomImageView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,6 +155,7 @@
 				2274777D28585C0800BBC998 /* Days */,
 				2274777C28585C0100BBC998 /* Home */,
 				2274778F2858679E00BBC998 /* DayDetails */,
+				227477BF2864774C00BBC998 /* Image */,
 				2274777928585B8000BBC998 /* MainTab */,
 				2274778328585D1100BBC998 /* Extentions.swift */,
 				227477A12860AD3500BBC998 /* Constants.swift */,
@@ -277,6 +280,22 @@
 			path = DailyMoodWidgets;
 			sourceTree = "<group>";
 		};
+		227477BF2864774C00BBC998 /* Image */ = {
+			isa = PBXGroup;
+			children = (
+				227477C02864776200BBC998 /* View */,
+			);
+			path = Image;
+			sourceTree = "<group>";
+		};
+		227477C02864776200BBC998 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				227477C12864778000BBC998 /* RandomImageView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -393,6 +412,7 @@
 				227477A02860AACF00BBC998 /* SafariView.swift in Sources */,
 				2274778428585D1100BBC998 /* Extentions.swift in Sources */,
 				2274778028585C1F00BBC998 /* HomeView.swift in Sources */,
+				227477C22864778100BBC998 /* RandomImageView.swift in Sources */,
 				2274777B28585BAD00BBC998 /* MainTab.swift in Sources */,
 				227477A72860ADAC00BBC998 /* HomeViewModel.swift in Sources */,
 				2274778B2858610300BBC998 /* DayMood.swift in Sources */,

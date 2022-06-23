@@ -5,7 +5,7 @@
 //  Created by MacOS on 20/06/2022.
 //
 
-import Foundation
+import SwiftUI
 
 struct K{
     static let songs = [
@@ -45,6 +45,9 @@ struct K{
         "Depression doesn't take away your talents—it just makes them harder to find.",
         "There is hope, even when your brain tells you there isn't.",
         
+    ]
+    static let images = [
+        Image("Portrait")
     ]
     
 }

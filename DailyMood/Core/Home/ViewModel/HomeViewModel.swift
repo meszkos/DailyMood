@@ -7,24 +7,22 @@
 
 import Foundation
 import UserNotifications
+import SwiftUI
 
 
 class HomeViewModel: ObservableObject{
     
     
     func getSong() -> URL{
-        let len = K.songs.count
-        
-        let index = Int.random(in: 0...len - 1)
-        
-        
-        return URL(string: K.songs[index])!
+        return URL(string: K.songs.randomElement()!)!
     }
+    
+    func getImage() -> Image{
+        return K.images.randomElement()!
+    }
+    
     func updateQuote() -> String{
-        let len = K.quotes.count
-        let index = Int.random(in: 0...len - 1)
-        
-        return K.quotes[index]
+        return K.quotes.randomElement()!
     }
     
     func configureNotification(quote: String){

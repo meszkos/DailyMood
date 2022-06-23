@@ -12,8 +12,9 @@ import UserNotifications
 struct HomeView: View {
     
     @ObservedObject var viewModel: HomeViewModel
-
-    @State var quote = ""
+    
+    @State private var isShowingImage: Bool = false
+    @State private var quote = ""
     @State private var showSafari = false
     
     let timer = Timer.publish(every: 14400 ,on: .main, in: .common).autoconnect()
@@ -73,8 +74,8 @@ extension HomeView{
     
     var actionButtons: some View{
         VStack{
-            Button {
-                //Image
+            Button{
+                isShowingImage.toggle()
             } label: {
                 Text("Get Image")
                     .frame(width: 200, height: 50)
@@ -84,6 +85,9 @@ extension HomeView{
                     .foregroundColor(.moodBlue)
                     
             }
+            .sheet(isPresented: $isShowingImage, content: {
+                RandomImageView(image: viewModel.getImage())
+            })
             .padding()
             Button {
                 showSafari.toggle()
