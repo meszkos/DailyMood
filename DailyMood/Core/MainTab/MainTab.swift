@@ -21,7 +21,6 @@ struct MainTab: View {
                 }
                 .tabItem {
                     Image(systemName: "house")
-                        
                 }.tag(0)
             DaysView()
                 .onTapGesture {

@@ -12,26 +12,9 @@ struct DaysView: View {
     @EnvironmentObject var realmService: RealmService
     
     var body: some View {
+        
         VStack{
-            HStack{
-                Spacer()
-                NavigationLink {
-                    AddDayView().environmentObject(realmService)
-                        
-                } label: {
-                    Image(systemName: "plus")
-                        .resizable()
-                        .frame(width: 25, height: 25)
-                        .foregroundColor(.moodBlue)
-                }
-
-            }
-            HStack{
-                Text("Daily Mood")
-                    .font(.largeTitle).bold()
-                    .foregroundColor(.black)
-                Spacer()
-            }
+            topStack
             ScrollView{
                 VStack(spacing: 0){
                     ForEach(realmService.dailyMoods, id: \.id){
@@ -57,4 +40,26 @@ struct DaysView_Previews: PreviewProvider {
     static var previews: some View {
         DaysView().environmentObject(RealmService())
     }
+}
+
+extension DaysView{
+    
+    var topStack: some View{
+        HStack{
+            Text("Daily Mood")
+                .font(.largeTitle).bold()
+                .foregroundColor(.black)
+            Spacer()
+            NavigationLink {
+                AddDayView().environmentObject(realmService)
+                    
+            } label: {
+                Image(systemName: "plus")
+                    .resizable()
+                    .frame(width: 25, height: 25)
+                    .foregroundColor(.moodBlue)
+            }
+        }
+    }
+    
 }
