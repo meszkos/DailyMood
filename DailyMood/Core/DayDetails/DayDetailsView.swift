@@ -16,37 +16,39 @@ struct DayDetailsView: View {
     var dayMood: DayMood
     
     var body: some View {
-        VStack(alignment: .leading){
-            
-            buttonStack
-            Divider()
-            moodScoreLabel
+        if !dayMood.isInvalidated{
+            VStack(alignment: .leading){
                 
+                buttonStack
+                Divider()
+                moodScoreLabel
+                    
 
-            Text("Positive things:")
-                .font(.largeTitle).bold()
-            Text("\(dayMood.positive)")
-                .padding()
-                .font(.system(size: 20))
-                .multilineTextAlignment(.center)
-                .background(Color.lightGray)
-                .clipShape(RoundedRectangle(cornerRadius: 20, style: .continuous))
-                .shadow(color: Color.primary.opacity(0.1), radius: 10, x: 0, y: 5)
-            Text("Challanges:")
-                .font(.largeTitle).bold()
-            Text("\(dayMood.challange)")
-                .padding()
-                .font(.system(size: 20))
-                .multilineTextAlignment(.center)
-                .background(Color.lightGray)
-                .clipShape(RoundedRectangle(cornerRadius: 20, style: .continuous))
-                .shadow(color: Color.primary.opacity(0.1), radius: 10, x: 0, y: 5)
-            
-            Spacer()
+                Text("Positive things:")
+                    .font(.largeTitle).bold()
+                Text("\(dayMood.positive)")
+                    .padding()
+                    .font(.system(size: 20))
+                    .multilineTextAlignment(.center)
+                    .background(Color.lightGray)
+                    .clipShape(RoundedRectangle(cornerRadius: 20, style: .continuous))
+                    .shadow(color: Color.primary.opacity(0.1), radius: 10, x: 0, y: 5)
+                Text("Challanges:")
+                    .font(.largeTitle).bold()
+                Text("\(dayMood.challange)")
+                    .padding()
+                    .font(.system(size: 20))
+                    .multilineTextAlignment(.center)
+                    .background(Color.lightGray)
+                    .clipShape(RoundedRectangle(cornerRadius: 20, style: .continuous))
+                    .shadow(color: Color.primary.opacity(0.1), radius: 10, x: 0, y: 5)
+                
+                Spacer()
+            }
+            .navigationTitle("")
+            .navigationBarHidden(true)
+            .padding()
         }
-        .navigationTitle("")
-        .navigationBarHidden(true)
-        .padding()
     }
 }
 
@@ -74,8 +76,8 @@ extension DayDetailsView{
             Spacer()
             
             Button {
-                realmService.deleteDay(id: dayMood.id)
-                presentationMode.wrappedValue.dismiss()
+                    presentationMode.wrappedValue.dismiss()
+                    realmService.deleteDay(id: dayMood.id)
                 
             } label: {
                 Image(systemName: "trash")

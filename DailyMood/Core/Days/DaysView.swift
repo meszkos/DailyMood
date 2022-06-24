@@ -17,7 +17,7 @@ struct DaysView: View {
             topStack
             ScrollView{
                 VStack(spacing: 0){
-                    ForEach(realmService.dailyMoods, id: \.id){
+                    ForEach(realmService.dailyMoods.sorted(by: {$0.date > $1.date}), id: \.id){
                         day in
                         if !day.isInvalidated{
                             DayRowView(dayMood: day)
