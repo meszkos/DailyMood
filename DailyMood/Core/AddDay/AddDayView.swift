@@ -22,7 +22,8 @@ struct AddDayView: View {
             
             Text("Mood score: \(String(format: "%.0f", moodScore))")
                 .font(.title).bold()
-            Slider(value: $moodScore, in: 0...100)
+            //Slider(value: $moodScore, in: 0...100)
+            slider
             
             Text("Good things from today:")
                 .font(.title).bold()
@@ -93,6 +94,23 @@ extension AddDayView{
         }
         .padding(.bottom, 20)
     }
+    
+    var slider: some View{
+        ZStack {
+              LinearGradient(
+                gradient: Gradient(colors: [.moodRed, .moodBlue, .moodGreen]),
+                  startPoint: .leading,
+                  endPoint: .trailing
+              )
+              .frame(height: 50)
+              .mask(Slider(value: $moodScore, in: 0...100))
+
+              Slider(value: $moodScore, in: 0...100)
+                  .opacity(0.05)
+                  
+        }
+    }
+    
     func getDate() -> String{
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "dd/MM/yy"

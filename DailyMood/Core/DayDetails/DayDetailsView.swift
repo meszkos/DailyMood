@@ -19,7 +19,9 @@ struct DayDetailsView: View {
         VStack(alignment: .leading){
             
             buttonStack
+            Divider()
             moodScoreLabel
+                
 
             Text("Positive things:")
                 .font(.largeTitle).bold()
@@ -66,6 +68,11 @@ extension DayDetailsView{
                     .foregroundColor(.moodBlue)
             }
             Spacer()
+            Text(dayMood.date)
+                .font(.system(size: 25))
+                .bold()
+            Spacer()
+            
             Button {
                 realmService.deleteDay(id: dayMood.id)
                 presentationMode.wrappedValue.dismiss()
@@ -78,6 +85,7 @@ extension DayDetailsView{
   
         }
         .padding(.bottom, 20)
+        
     }
     var moodScoreLabel: some View{
         HStack{
